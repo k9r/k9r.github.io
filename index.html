@@ -1,76 +1,78 @@
 <head>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 <body>
-   <main role="main" class="container">
-      <div class="starter-template">
-         <h1>Numerology Name Total Calculator</h1>
-         <p class="lead">Enter the name and see the total!</p>
-         <form id="calc">
-            <div class="form-group">
-               <label for="InputName">Name</label>
-               <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="Enter name">
-               <small id="nameHelp" class="form-text text-muted">Key in the name here.</small>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-         </form>
-         <h2 class="hidden" id="total"></h2>
-         <script>
-            const NUM_MAP = {
-                "A": 1,
-                "I": 1,
-                "J": 1,
-                "Q": 1,
-                "Y": 1,
-            
-                "B": 2,
-                "K": 2,
-                "R": 2,
-            
-                "C": 3,
-                "G": 3,
-                "L": 3,
-                "S": 3,
-            
-                "D": 4,
-                "M": 4,
-                "T": 4,
-            
-                "E": 5,
-                "H": 5,
-                "N": 5,
-                "X": 5,
-            
-                "U": 6,
-                "V": 6,
-                "W": 6,
-            
-                "O": 7,
-                "Z": 7,
-            
-                "F": 8,
-                "P": 8,
-            
-            }
-            
-            $( "#calc" ).submit(function( event ) {
-               let total = 0;
-              $("#InputName").val().toUpperCase().split('').map(letter => {
-               if (letter != " ") {
-                console.log(letter, NUM_MAP[letter]);
-                total += NUM_MAP[letter];
-               }
-              });
-               $("#total").text("The total is " + total);
-               $("#total").removeClass("hidden");
-               event.preventDefault();
-            });
-            
-         </script>
-      </div>
-   </main>
-   <!-- /.container -->
+ <main role="main" class="container">
+  <div class="starter-template">
+   <h1>Numerology Name Total Calculator</h1>
+   <p class="lead">Enter the name and see the total!</p>
+   <form id="calc">
+    <div class="form-group">
+     <label for="InputName">Name</label>
+     <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="Enter name">
+     <small id="nameHelp" class="form-text text-muted">Key in the name here.</small>
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+ <h2 class="hidden" id="total"></h2>
+</div>
+<script>
+  const NUM_MAP = {
+    "A": 1,
+    "I": 1,
+    "J": 1,
+    "Q": 1,
+    "Y": 1,
+
+    "B": 2,
+    "K": 2,
+    "R": 2,
+
+    "C": 3,
+    "G": 3,
+    "L": 3,
+    "S": 3,
+
+    "D": 4,
+    "M": 4,
+    "T": 4,
+
+    "E": 5,
+    "H": 5,
+    "N": 5,
+    "X": 5,
+
+    "U": 6,
+    "V": 6,
+    "W": 6,
+
+    "O": 7,
+    "Z": 7,
+
+    "F": 8,
+    "P": 8,
+
+  };
+
+  $( "#calc" ).submit(function( event ) {
+   let total = 0;
+   $("#InputName").val().toUpperCase().split('').map(letter => {
+     if (letter != " ") {
+      console.log(letter, NUM_MAP[letter]);
+      total += NUM_MAP[letter];
+    }
+  });
+   $("#total").text("The total is " + total);
+   $("#total").removeClass("hidden");
+   event.preventDefault();
+ });
+
+</script>
+</div>
+</main>
+<!-- /.container -->
 </body>
